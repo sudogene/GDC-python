@@ -64,7 +64,7 @@ data = gdc.Data(metadata.file_id)
 ```
 2. Download the files and provide the output directory path. Note that file ids that are already found within the 
 provided directory will be assumed as files downloaded before, and will be skipped by default due to caching. 
-This behaviour can be changed by passing in `cache=False` in `.download(path, cache=False)`.
+This behaviour can be changed by passing in `cached=False` in `.download(path, cached=False)`.
 ```
 data.download('downloads/')
 ```
