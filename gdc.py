@@ -9,10 +9,11 @@ import pandas as pd
 
 
 class Files:
-    def __init__(self, filters):
+    def __init__(self, filters={}, token=''):
         self.filters = filters
         self.fields = self._generate_fields()
         self.size = 2000
+        self.token = token
     
     def add_filters(self, filters: dict):
         self.filters.update(filters)
@@ -50,7 +51,7 @@ class Files:
             'format': 'TSV'
         }
         response = requests.post(files_endpt,
-            headers={'Content-Type': 'application/json'},
+            headers={'Content-Type': 'application/json', 'X-Auth-Token': self.token},
             data=json.dumps(params))
         
         while not response.ok:
@@ -70,8 +71,9 @@ class Files:
 
 
 class Data:
-    def __init__(self, file_ids: list = []):
+    def __init__(self, file_ids: list = [], token=''):
         self.file_ids = file_ids
+        self.token = token
     
     def _preprocess_list(self, directory):
         existing = os.listdir(directory)
@@ -93,7 +95,7 @@ class Data:
         params = {'ids': fids}
 
         response = requests.post(data_endpt, data=json.dumps(params),
-            headers = {'Content-Type': 'application/json'})
+            headers = {'Content-Type': 'application/json', 'X-Auth-Token': self.token})
         
         response_head_cd = response.headers['Content-Disposition']
         filename = re.findall('filename=(.+)', response_head_cd)[0]
