@@ -9,7 +9,7 @@ import pandas as pd
 
 
 class Files:
-    def __init__(self, filters):
+    def __init__(self, filters={}):
         self.filters = filters
         self.fields = self._generate_fields()
         self.size = 2000
