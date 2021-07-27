@@ -75,6 +75,18 @@ Likewise, the process is designed to be one-lined.
 gdc.Data(metadata.file_id).download('downloads/')
 ```
 
+### Useful filters
+To obtain RNA-Seq BAM files of TCGA-STAD tumor samples
+```
+filters = {
+  'cases.samples.sample_type': 'Primary Tumor',
+  'cases.project.project_id': 'TCGA-STAD',
+  'data_type': 'Aligned Reads',
+  'experimental_strategy': 'RNA-Seq',
+  'data_format': 'BAM'
+}
+```
+
 ### TODO
 The GDC API is much more extensive than these two objects. This is a quick dirty way to query and download files required.
 More features will be added in the future.
