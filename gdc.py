@@ -9,8 +9,8 @@ import pandas as pd
 
 
 class Files:
-    def __init__(self, filters={}, token=''):
-        self.filters = filters
+    def __init__(self, token=''):
+        self.filters = {}
         self.fields = self._generate_fields()
         self.size = 2000
         self.token = token
