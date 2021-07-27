@@ -1,6 +1,6 @@
-### Usage
+## Usage
 
-#### Querying metadata of data files
+### Querying metadata of data files
 1. The `Files` object represents a GDC Files query.
 ```
 import gdc
@@ -36,7 +36,7 @@ metadata = gdc.Files().add_filters({
 }).query()
 ```
 
-#### Downloading files using file ids from the query above
+### Downloading files using file ids from the query above
 When done exactly as above, the DataFrame result should look something like this
 ```
 >> metadata.shape
@@ -75,6 +75,6 @@ Likewise, the process is designed to be one-lined.
 gdc.Data(metadata.file_id).download('downloads/')
 ```
 
-#### TODO
+### TODO
 The GDC API is much more extensive than these two objects. This is a quick dirty way to query and download files required.
 More features will be added in the future.
