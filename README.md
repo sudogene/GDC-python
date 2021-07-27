@@ -87,6 +87,6 @@ filters = {
 }
 ```
 
-### TODO
+## TODO
 The GDC API is much more extensive than these two objects. This is a quick dirty way to query and download files required.
 More features will be added in the future.
