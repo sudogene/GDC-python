@@ -25,6 +25,7 @@ class Files:
         fields = [
             'file_name',
             'file_id',
+            'file_size',
             'cases.case_id',
             'cases.submitter_id',
             'cases.samples.sample_type',

@@ -1,3 +1,6 @@
 __pycache__/
 downloads/
 test.py
+*.ipynb
+*.tsv
+*.csv
